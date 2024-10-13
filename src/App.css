@@ -5,9 +5,9 @@
   --oxford-blue: #001d3d;
   --yale-blue: #003566;
   --marian-blue: #00428b;
-  --mikado-yellow: rgb(255, 195, 0);
-  --gold-yellow: rgb(255, 214, 10);
-  --maize-yellow: rgb(251, 236, 93);
+  --mikado-yellow: #ffc300;
+  --gold-yellow: #ffd60a;
+  --maize-yellow: #fbec5d;
 }
 body {
   background: linear-gradient(180deg, var(--oxford-blue), var(--marian-blue));
