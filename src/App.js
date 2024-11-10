@@ -15,7 +15,7 @@ gsap.registerPlugin(ScrollTrigger, TextPlugin);
 function App() {
   const helloRef = useRef(null);
   const welcomeRef = useRef(null);
-  /* const navRef = useRef(null); */
+  // const navRef = useRef(null); 
   const sectionRefs = useRef([]);
   const [navbarVisible, setNavbarVisible] = useState(false); // Track navbar visibility
 
@@ -92,7 +92,6 @@ function App() {
         </div>
       </nav>
 
-      /* Section with the Star */
       <header className="App-header">
         <div className="welcome-container">
           <h1 ref={helloRef}></h1>
@@ -105,7 +104,7 @@ function App() {
         </Canvas>
       </header>
 
-      /* Websie sections with the transitions */
+      {/* Websie sections with the transitions */}
       <section ref={(el) => (sectionRefs.current[0] = el)} id="about" className="section container">
         <h1>About Me</h1>
         <p>Brief description about yourself.</p>

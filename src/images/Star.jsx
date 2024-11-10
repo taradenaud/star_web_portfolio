@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
 export function Star(props) {
-  const { nodes, materials } = useGLTF('/star-transformed.glb'); 
+  const { nodes, materials } = useGLTF('/assets/star-transformed.glb'); 
   const starRef = useRef(); 
 
   // Spinning animation
@@ -21,5 +21,5 @@ export function Star(props) {
 }
 
 // Preload the model to improve performance
-useGLTF.preload('/star-transformed.glb');
+useGLTF.preload('/assets/star-transformed.glb');
 
