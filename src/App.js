@@ -73,13 +73,14 @@ function App() {
       {/* Navbar */}
       <nav className={`navbar ${navbarVisible ? "visible" : ""}`}>
         <ul>
-          <li onClick={() => scrollToSection('about')}>About Me</li>
-          <li onClick={() => scrollToSection('experience')}>Experience</li>
-          <li onClick={() => scrollToSection('community')}>Community Involvement</li>
-          <li onClick={() => scrollToSection('projects')}>Projects</li>
-          <li onClick={() => scrollToSection('contact')}>Contact Me</li>
+          <li onClick={() => scrollToSection('about')}> <b>About Me</b></li>
+          <li onClick={() => scrollToSection('experience')}><b>Experience</b></li>
+          <li onClick={() => scrollToSection('community')}><b>Community Involvement</b></li>
+          <li onClick={() => scrollToSection('projects')}><b>Projects</b></li>
+          <li onClick={() => scrollToSection('contact')}><b>Contact Me</b></li>
         </ul>
         <div className="navbar-icons">
+          <a href="mailto:taradenaud4@gmail.com">Resume</a>
           <a href="https://github.com/taradenaud" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -129,7 +130,7 @@ function App() {
         <h2>Contact Me</h2>
         <p>If you'd like to get in touch, feel free to reach out via email or social media.</p>
         <div className="contact-details">
-          <p>Email: taradenaud4@gmail.com</p>
+          <p>Email: <a href="mailto:taradenaud4@gmail.com">taradenaud4@gmail.com</a></p>
           <p>LinkedIn: <a href="https://linkedin.com/in/taradenaud" target="_blank" rel="noopener noreferrer">linkedin.com/in/taradenaud</a></p>
           <p>GitHub: <a href="https://github.com/taradenaud" target="_blank" rel="noopener noreferrer">github.com/taradenaud</a></p>
         </div>

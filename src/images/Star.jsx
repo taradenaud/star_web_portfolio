@@ -3,7 +3,7 @@ import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 
 export function Star(props) {
-  const { nodes, materials } = useGLTF('/assets/star-transformed.glb'); 
+  const { nodes, materials } = useGLTF('/assets/star15.glb'); 
   const starRef = useRef(); 
 
   // Spinning animation
@@ -14,7 +14,7 @@ export function Star(props) {
   });
 
   return (
-    <group ref={starRef} rotation={[Math.PI / 2, 0, 0]} {...props} dispose={null}>
+    <group ref={starRef} rotation={[Math.PI / 2, 0, 0]} scale={[2, 2, 2]} {...props} dispose={null}>
       <mesh geometry={nodes.Star.geometry} material={materials.GlowingStar} />
     </group>
   );
