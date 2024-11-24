@@ -9,6 +9,10 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { gsap } from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import headshot from "./images/headshot.jpg"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -53,7 +57,7 @@ function App() {
           },
         }
       );
-    });
+    });    
 
     // Nav bar trigger (to show when the user scrolls to the "About me section")
     ScrollTrigger.create({
@@ -67,6 +71,15 @@ function App() {
   const scrollToSection = (id) => {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   };
+
+  const carouselSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  
 
   return (
     <div className="App">
@@ -108,7 +121,29 @@ function App() {
       {/* Websie sections with the transitions */}
       <section ref={(el) => (sectionRefs.current[0] = el)} id="about" className="section container">
         <h1>About Me</h1>
-        <p>Brief description about yourself.</p>
+        <div className="about-content">
+        <div className="about-photo">
+          <img src={headshot} alt="Tara Denaud" />
+        </div>
+
+        {/* Carousel */}
+        <div className="about-carousel">
+          <Slider {...carouselSettings} >
+            <div>
+              <h2>Description</h2>
+              <p>Brief description about yourself goes here.</p>
+            </div>
+            <div>
+              <h2>Education</h2>
+              <p>Details about your educational background go here.</p>
+            </div>
+            <div>
+              <h2>Relevant Classes</h2>
+              <p>List the most relevant classes you’ve taken here.</p>
+            </div>
+          </Slider>
+        </div>
+      </div>
       </section>
 
       <section ref={(el) => (sectionRefs.current[1] = el)} id="experience" className="section container">
