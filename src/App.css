@@ -15,6 +15,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding-bottom: 50px;
 
 }
 
@@ -31,6 +32,8 @@ body, html {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-header {
@@ -38,7 +41,7 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; 
+  min-height: 100vh;
   padding: 2rem; 
   background-color: transparent; 
 }
@@ -49,8 +52,8 @@ body, html {
 }
 
 .star-canvas {
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   
 }
 
@@ -142,24 +145,29 @@ p {
 /* Section Container Styling */
 
 .section {
-  margin: 6rem auto; /* Add space between sections */
+  margin: 8rem auto; /* Add space between sections */
   max-width: 1200px;
-  min-height: 400px;
-  position: center;
+  width: 100%;
+  /* min-height: 600px; */
   justify-content: center;
   align-items: center;
-  scroll-margin-top: 100px;
   padding-top: 10px;
 }
 
 .container {
-  position: center;
   justify-content: center;
   align-items: center;
   padding: 3rem;
   background-color: rgba(255, 255, 255, 0.05); 
   border-radius: 10px;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* scroll transition */
+  
+}
+/* Animation for sliding sections */
+.container {
+  opacity: 0; 
+  transform: translateY(50px); 
+  margin-bottom: 4rem;
   
 }
 
@@ -176,28 +184,19 @@ p {
   text-decoration: underline;
 }
 
-/* Animation for sliding sections */
-.container {
-  opacity: 0; 
-  transform: translateY(50px); 
-  margin-bottom: 4rem;
-  
-}
-
-.container:last-of-type {
+.contact-section{
   margin-bottom: 12rem; /* Extra bottom margin for the last container (Contact) */
+
 }
 /* About Container */
 
-#about{
-  
-  box-sizing: border-box;
-}
 .about-content{
   max-width: 1200px;
   height: fit-content;
   display: flex;
   opacity: 1;
+  gap: 1rem;
+  
 }
 .about-photo{
   flex: 1;
@@ -207,15 +206,22 @@ p {
 }
 .about-photo > img{
   height: 100%;
+  border-radius: 10px;
 }
 
 .about-carousel {
-  padding: 2rem;
+  padding: 3rem;
   flex: 3;
   max-width: 75%;
   overflow: hidden;
-
+  background-color: rgba(255, 255, 255, 0.025);
+  border-radius: 10px; 
 }
+
+.about-carousel .slick-slider {
+  height: 100%;
+}
+
 /* Star Canvas */
 .star-canvas {
   height: fit-content; 

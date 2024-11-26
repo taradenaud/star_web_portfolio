@@ -27,17 +27,17 @@ function App() {
   useEffect(() => {
     // typewriting animation for the intro
     gsap.to(helloRef.current, {
-      duration: 2,
+      duration: 2.5,
       text: "Hello, my name is Tara Denaud!",
       ease: "power1.inOut",
       delay: 0.5,
     });
 
     gsap.to(welcomeRef.current, {
-      duration: 2,
+      duration: 2.5,
       text: "Welcome to my portfolio",
       ease: "power1.inOut",
-      delay: 3,
+      delay: 3.5,
     });
     
 
@@ -48,13 +48,13 @@ function App() {
         {
           y: 0,
           opacity: 1,
-          duration: 1.5,
+          duration: 2,
           ease: "power4.out",
           scrollTrigger: {
-            trigger: el,
+            trigger: sectionRefs.current,
             start: "top 80%",
-            end: "top 50%",
-            scrub: true,
+            end: "bottom 50%",
+            scrub: false,
           },
         }
       );
@@ -69,9 +69,20 @@ function App() {
     });
   }, []);
 
+
+
   const scrollToSection = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    const section = document.getElementById(id);
+    const navHeight = document.querySelector(".navbar").offsetHeight; // Get nav bar height
+  
+    const top = section.getBoundingClientRect().top + window.pageYOffset - navHeight - 20; // Add extra space
+  
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
   };
+  
 
   const carouselSettings = {
     dots: true,
@@ -79,6 +90,9 @@ function App() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,      
+    autoplaySpeed: 3000, 
+    pauseOnHover: true,
   };
   
 
@@ -181,7 +195,7 @@ function App() {
         <p>Showcase your key projects here.</p>
       </section>
 
-      <section ref={(el) => (sectionRefs.current[4] = el)} id="contact" className="section container">
+      <section ref={(el) => (sectionRefs.current[4] = el)} id="contact" className="section container contact-section">
         <h2>Contact Me</h2>
         <p>If you'd like to get in touch, feel free to reach out via email or social media.</p>
         <div className="contact-details">
