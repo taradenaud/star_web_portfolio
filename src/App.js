@@ -74,12 +74,12 @@ function App() {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     const navHeight = document.querySelector(".navbar").offsetHeight; // Get nav bar height
-  
-    const top = section.getBoundingClientRect().top + window.pageYOffset - navHeight - 20; // Add extra space
+    const top = section.getBoundingClientRect().top + window.pageYOffset - navHeight - 110; // Add extra space
   
     window.scrollTo({
       top,
       behavior: "smooth",
+
     });
   };
   
