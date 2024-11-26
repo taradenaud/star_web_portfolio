@@ -11,7 +11,7 @@
 }
 body {
   background: linear-gradient(180deg, var(--oxford-blue), var(--marian-blue));
-  /* background-attachment: fixed;  */
+  background-attachment: fixed; 
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -187,15 +187,41 @@ p {
 .container:last-of-type {
   margin-bottom: 12rem; /* Extra bottom margin for the last container (Contact) */
 }
-/*About Container*/
+/* About Container */
 
+#about{
+  
+  box-sizing: border-box;
+}
+.about-content{
+  max-width: 1200px;
+  height: fit-content;
+  display: flex;
+  opacity: 1;
+}
+.about-photo{
+  flex: 1;
+  height: 40vh;
+  display: flex;
+  justify-content: flex-start;
+}
+.about-photo > img{
+  height: 100%;
+}
 
+.about-carousel {
+  padding: 2rem;
+  flex: 3;
+  max-width: 75%;
+  overflow: hidden;
+
+}
 /* Star Canvas */
 .star-canvas {
   height: fit-content; 
 }
 
-
 /* Media size screen*/
+
 /* To be added soon! */
 

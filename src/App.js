@@ -13,6 +13,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import headshot from "./images/headshot.jpg"
+import pic from "./images/pic1.jpg"
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -122,28 +123,47 @@ function App() {
       <section ref={(el) => (sectionRefs.current[0] = el)} id="about" className="section container">
         <h1>About Me</h1>
         <div className="about-content">
-        <div className="about-photo">
-          <img src={headshot} alt="Tara Denaud" />
-        </div>
+          {/* Picture */}
+          <div className="about-photo">
+            <img src={pic} alt="Tara Denaud" />
+          </div>
 
-        {/* Carousel */}
-        <div className="about-carousel">
-          <Slider {...carouselSettings} >
-            <div>
-              <h2>Description</h2>
-              <p>Brief description about yourself goes here.</p>
-            </div>
-            <div>
-              <h2>Education</h2>
-              <p>Details about your educational background go here.</p>
-            </div>
-            <div>
-              <h2>Relevant Classes</h2>
-              <p>List the most relevant classes you’ve taken here.</p>
-            </div>
-          </Slider>
+          {/* Carousel */}
+          <div className="about-carousel">
+            <Slider {...carouselSettings} >
+              <div>
+                <h2>Description</h2>
+                <p>
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog
+                The quick brown fox jumps over the lazy dog</p>
+              </div>
+              <div>
+                <h2>Education</h2>
+                <p>educational stuff here.</p>
+              </div>
+              <div>
+                <h2>Relevant Classes Taken</h2>
+                <p>relevant classes taken here.</p>
+              </div>
+            </Slider>
+          </div>
         </div>
-      </div>
       </section>
 
       <section ref={(el) => (sectionRefs.current[1] = el)} id="experience" className="section container">
