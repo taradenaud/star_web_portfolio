@@ -1,16 +1,15 @@
 /* Website colors */
 
 :root {
-  --rich-black: #000814;
-  --oxford-blue: #001d3d;
-  --yale-blue: #003566;
-  --marian-blue: #00428b;
+  --rich-black: #101630;
+  --oxford-blue: #1d2853;
+  --yale-blue: #354382;
+  --marian-blue: #626fa2;
   --mikado-yellow: #ffc300;
   --gold-yellow: #ffd60a;
   --maize-yellow: #fbec5d;
 }
 body {
-  background: linear-gradient(180deg, var(--oxford-blue), var(--marian-blue));
   background-attachment: fixed; 
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,7 +27,7 @@ body, html {
 }
 .App {
   text-align: center;
-  background: linear-gradient(180deg, var(--oxford-blue), var(--marian-blue));
+  background: linear-gradient(180deg, var(--rich-black), var(--oxford-blue));
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,20 +94,20 @@ p {
   height: 500px;
 }
 
-/* Nav bar properties */
+/* NAV BAR */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--marian-blue);
+  background-color: var(--yale-blue);
   padding: 10px;
   z-index: 10;
   display: flex;
-  justify-content: space-between; /* ensure proper spacing between elements of the nav bar */
+  justify-content: space-between; /*  proper spacing between elements of the bar */
   align-items: center;
   opacity: 0;
-  transition: opacity 0.5s ease; /* fade-in transition */
+  transition: opacity 0.5s ease; 
   pointer-events: none; 
 }
 
@@ -121,7 +120,7 @@ p {
   list-style-type: none;
   display: flex;
   gap: 1.25rem;
-  color: var(--oxford-blue);
+  color: var(--rich-black);
 }
 
 .navbar ul li {
@@ -135,7 +134,7 @@ p {
 .navbar-icons a {
   margin-left: 1rem;
   font-size: 1.5rem;
-  color: var(--oxford-blue);
+  color: var(--rich-black);
 }
 
 .navbar-icons a:hover {
@@ -145,10 +144,10 @@ p {
 /* Section Container Styling */
 
 .section {
-  margin: 8rem auto; /* Add space between sections */
+  margin: 8rem auto; 
   max-width: 1200px;
   width: 100%;
-  /* min-height: 600px; */
+  min-height: 600px; /* REMOVE LATER */
   justify-content: center;
   align-items: center;
   padding-top: 10px;
@@ -227,6 +226,84 @@ p {
   height: fit-content; 
 }
 
+/*COMMUNITY INVOLVEMENT*/
+
+/* Tab Nav Bar */
+.tabs {
+  text-align: center;
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0; 
+  gap: 10px;
+}
+
+.tab {
+  flex: 1; /* Equal width tabs */
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  color: var(--mikado-yellow);
+  background-color: transparent;
+  transition: filter 0.3s ease; 
+}
+
+.tab.tab1 {
+  background-color: rgba(255, 255, 255, 0.1); 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab.tab2 {
+  background-color: rgba(255, 255, 255, 0.2); 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab.tab3 {
+  background-color: rgba(255, 255, 255, 0.3); 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.tab.tab4 {
+  background-color: rgba(255, 255, 255, 0.4); 
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.content-container {
+  min-height: 100px; /* Ensure a consistent box size, MAYBE REMOVE LATER */
+}
+
+.content {
+  display: none; /* Hide all content by default */
+}
+
+.content.active-content {
+  display: block; /* Show only the active content */
+  padding: 20px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.content1.active-content {
+  background-color: rgba(255, 255, 255, 0.1); 
+}
+
+.content2.active-content {
+  background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.content3.active-content {
+  background-color: rgba(255, 255, 255, 0.3); 
+}
+
+.content4.active-content {
+  background-color: rgba(255, 255, 255, 0.4); /* Blue */
+}
 /* Media size screen*/
 
 /* To be added soon! */
