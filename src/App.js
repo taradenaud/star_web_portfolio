@@ -14,6 +14,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import headshot from "./images/headshot.jpg"
 import pic from "./images/pic1.jpg"
+import testCV from "./images/testCV.pdf";
 
 gsap.registerPlugin(ScrollTrigger, TextPlugin);
 
@@ -23,6 +24,8 @@ function App() {
   // const navRef = useRef(null); 
   const sectionRefs = useRef([]);
   const [navbarVisible, setNavbarVisible] = useState(false); // Track navbar visibility
+  const [activeTab, setActiveTab] = useState(0); 
+  
 
   useEffect(() => {
     // typewriting animation for the intro
@@ -108,7 +111,7 @@ function App() {
           <li onClick={() => scrollToSection('contact')}><b>Contact Me</b></li>
         </ul>
         <div className="navbar-icons">
-          <a href="mailto:taradenaud4@gmail.com">Resume</a>
+          <a href={testCV} target="_blank" rel="noopener noreferrer"> <b>Resume</b></a>
           <a href="https://github.com/taradenaud" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -139,7 +142,7 @@ function App() {
         <div className="about-content">
           {/* Picture */}
           <div className="about-photo">
-            <img src={pic} alt="Tara Denaud" />
+            <img src={headshot} alt="Tara Denaud" />
           </div>
 
           {/* Carousel */}
@@ -187,7 +190,52 @@ function App() {
 
       <section ref={(el) => (sectionRefs.current[2] = el)} id="community" className="section container">
         <h2>Community Involvement</h2>
-        <p>Describe your community involvement.</p>
+        <div className="tab-bar">
+          <div
+            className={`tab tab1`}
+            onClick={() => setActiveTab(0)}
+          >
+            CSSA
+          </div>
+          <div
+            className={`tab tab2`}
+            onClick={() => setActiveTab(1)}
+          >
+            CUSEC
+          </div>
+          <div
+            className={`tab tab3`}
+            onClick={() => setActiveTab(2)}
+          >
+            Engineering Faculty Council
+          </div>
+          <div
+            className={`tab tab4`}
+            onClick={() => setActiveTab(3)}
+          >
+            uOttaHack
+          </div>
+        </div>
+
+        {/* Content Box */}
+        <div className="content-container">
+          <div className={`content content1 ${activeTab === 0 ? "active-content" : ""}`}>
+            <h2>Tab 1</h2>
+            <p>Stuff for Tab 1.</p>
+          </div>
+          <div className={`content content2 ${activeTab === 1 ? "active-content" : ""}`}>
+            <h2>Tab 2 </h2>
+            <p>Stuff for Tab 2.</p>
+          </div>
+          <div className={`content content3 ${activeTab === 2 ? "active-content" : ""}`}>
+            <h2>Tab 3 </h2>
+            <p>Stuff for Tab 3.</p>
+          </div>
+          <div className={`content content4 ${activeTab === 3 ? "active-content" : ""}`}>
+            <h2>Tab 4 </h2>
+            <p>Stuff for Tab 4.</p>
+          </div>
+        </div>
       </section>
 
       <section ref={(el) => (sectionRefs.current[3] = el)} id="projects" className="section container">
