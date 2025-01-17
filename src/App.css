@@ -27,7 +27,7 @@ body, html {
 }
 .App {
   text-align: center;
-  background: linear-gradient(180deg, var(--rich-black), var(--oxford-blue));
+  background: linear-gradient(180deg, var(--oxford-blue), var(--yale-blue));
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -100,7 +100,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  background-color: var(--yale-blue);
+  background: var(--yale-blue);
   padding: 10px;
   z-index: 10;
   display: flex;
@@ -109,6 +109,7 @@ p {
   opacity: 0;
   transition: opacity 0.5s ease; 
   pointer-events: none; 
+  
 }
 
 .navbar.visible {
@@ -144,7 +145,7 @@ p {
 /* Section Container Styling */
 
 .section {
-  margin: 8rem auto; 
+  margin: 6rem auto; 
   max-width: 1200px;
   width: 100%;
   min-height: 600px; /* REMOVE LATER */
@@ -156,7 +157,7 @@ p {
 .container {
   justify-content: center;
   align-items: center;
-  padding: 3rem;
+  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.05); 
   border-radius: 10px;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out; /* scroll transition */

@@ -7,6 +7,7 @@ import { Star } from './images/Star';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFile } from '@fortawesome/free-solid-svg-icons';
 import { gsap } from 'gsap';
 import { ScrollTrigger, TextPlugin } from 'gsap/all';
 import "slick-carousel/slick/slick.css";
@@ -108,10 +109,13 @@ function App() {
           <li onClick={() => scrollToSection('experience')}><b>Experience</b></li>
           <li onClick={() => scrollToSection('community')}><b>Community Involvement</b></li>
           <li onClick={() => scrollToSection('projects')}><b>Projects</b></li>
+          <li onClick={() => scrollToSection('stack')}><b>Tech Stack</b></li>
           <li onClick={() => scrollToSection('contact')}><b>Contact Me</b></li>
         </ul>
         <div className="navbar-icons">
-          <a href={testCV} target="_blank" rel="noopener noreferrer"> <b>Resume</b></a>
+
+          <a href={testCV} target="_blank" rel="noopener noreferrer"> 
+            <FontAwesomeIcon icon={faFile} /> </a>
           <a href="https://github.com/taradenaud" target="_blank" rel="noopener noreferrer">
             <FontAwesomeIcon icon={faGithub} />
           </a>
@@ -243,13 +247,19 @@ function App() {
         <p>Showcase your key projects here.</p>
       </section>
 
-      <section ref={(el) => (sectionRefs.current[4] = el)} id="contact" className="section container contact-section">
+      <section ref={(el) => (sectionRefs.current[4] = el)} id="stack" className="section container">
+        <h2>Here is my tech stack</h2>
+        <p>Showcase your tech stack woo!</p>
+      </section>
+
+      <section ref={(el) => (sectionRefs.current[5] = el)} id="contact" className="section container contact-section">
         <h2>Contact Me</h2>
         <p>If you'd like to get in touch, feel free to reach out via email or social media.</p>
         <div className="contact-details">
           <p>Email: <a href="mailto:taradenaud4@gmail.com">taradenaud4@gmail.com</a></p>
           <p>LinkedIn: <a href="https://linkedin.com/in/taradenaud" target="_blank" rel="noopener noreferrer">linkedin.com/in/taradenaud</a></p>
           <p>GitHub: <a href="https://github.com/taradenaud" target="_blank" rel="noopener noreferrer">github.com/taradenaud</a></p>
+          <p>Take a look at my resume here</p>
         </div>
       </section>
     </div>
